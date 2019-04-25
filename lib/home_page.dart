@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:crypto_appmtech/main.dart';
 
 class HomePage extends StatefulWidget {
+  List currencies;
+  HomePage(this.currencies);
   @override
   _HomePageState createState() => _HomePageState();
 }

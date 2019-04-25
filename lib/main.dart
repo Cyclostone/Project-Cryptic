@@ -3,16 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-void main() => runApp(new MyApp());
+void main() async{
+  List currencies = await getCurrencies();
+  print(currencies);
+  runApp(new MyApp(currencies));
+}
 
 class MyApp extends StatelessWidget{
+  final List _currencies;
+  MyApp(this._currencies);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: HomePage(),
+      home: HomePage(_currencies),
     );
   }
 }
